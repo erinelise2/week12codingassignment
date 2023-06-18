@@ -1,9 +1,9 @@
-// Declaring a URL endpoint. Can be an API (using AJAX) or local db.json. If you use local, *** type: json-server --watch db.json into terminal. Then use that url below.  NOT SURE HOW TO GET THIS TO WORK //
+// CRUD = Create, Read, Update, Delete (Post, Get, Put, Delete) Declaring a URL endpoint. Can be an API (using AJAX) or local db.json. If you use local, *** type: json-server --watch db.json into terminal. Then use that url below.  NOT SURE HOW TO GET THIS TO WORK //
 // const taskdatabase_URL = 'http://localhost:3000/'
 
 // Create a code that loops over data and adds information to DOM //
 $.get(taskdatabase_URL).then((data) =>
-  data.map((targetTask) => {
+  data.map((task) => {
     $('tbody').append(
       $(`
     <tr>
@@ -17,7 +17,7 @@ $.get(taskdatabase_URL).then((data) =>
     </tr>`)
     )
   })
-)
+);
 
 //Post/Adding new tasks //
 $('#task').click(function () {
@@ -26,7 +26,7 @@ $('#task').click(function () {
       toDoNote: $('#newNote').val(),
       toDoDeadline: $('#newDeadline').val(),
     })
-  })
+  });
 
 //Deleting existing task ASCII trash bin: 🗑 from lab //
 
@@ -34,7 +34,7 @@ function deleteTask(id) {
     $.ajax(`${taskDatabase_URL}/${id}`, {
       type: 'DELETE',
     })
-  }
+  };
 
 //Updating information //
 function updateTask() {
@@ -45,10 +45,11 @@ function updateTask() {
       data: {
         toDoTask: $('#updateTask').val(),
         toDoNote: $('#updateNote').val(),
-        toDoDealine: $('#updateDeadline').val(),
+        toDoDeadline: $('#updateDeadline').val(),
+        toDoStatus: $('updateStatus').val(),
       },
     })
-  }
+  };
   
   // event listener to update task when button is clicked //
   $('#updateTask').click(updateTask)

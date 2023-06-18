@@ -1,0 +1,41 @@
+body {
+    font-family: 'Shadows Into Light', cursive;
+    background-color:azure;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainHeader {
+   color: rgb(125, 152, 181);
+   letter-spacing: 2pt;
+}
+
+.tableHeader {
+    color: rgb(125, 152, 181);
+    letter-spacing: 2pt;
+}
+
+button {
+    letter-spacing: 2pt;
+}
+
+th {
+
+    letter-spacing: 2pt;
+    font-weight: bolder;
+}
+
+tbody {
+    background-color: #dee2e6;
+    color: 6c757d;
+}
+
+.taskForm {
+    color: #6c757d;
+}
+
+.taskUpdateForm {
+    color: #6c757d;
+}
+

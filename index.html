@@ -20,61 +20,67 @@
     ></script>
         <!-- my script -->
      <script src="script.js"></script>
+     <!-- My CSS style sheet -->
+     <link href="index.css" rel="stylesheet" />
         <!-- Popper CDN: For dropdowns, popovers, tooltips, etc-->
     <script
     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
     crossorigin="anonymous"
   ></script>
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
-<body class="text-secondary">
+<body>
     <h1 class="mainHeader header fs-1 fw-bolder text-center m-4">Let's Get To It</h1>
     <form>
-        <h4 class='header m-2'><span class="border-bottom border-3 p-1">Create A New Task</span></h4>
-        <div class='taskForm m-4 text-center'>
-            <label for="newTask">To Do Task</label>
+        <h4 class='header m-2'><span class="border-bottom border-3 p-1">Create A New Task:</span></h4>
+        <div class='taskForm m-4'>
+            <label class="m-2" for="newTask">To Do Task</label>
             <input id="newTask" placeholder="Task" />
-            <label for="newNote">Notes</label>
+            <label class="m-2" for="newNote">Notes</label>
             <input id="newNote" placeholder="Notes"/>
-        </div>
-        <div class="m-4 text-center">
-            <label for="newDeadline">Deadline</label>
+            <label for="newDeadline">Deadline Date</label>
             <input id="newDeadline" type="Date" />
         </div>
         <div class="text-center">
-            <button class='btn btn-sm task-btn border border-secondary border-3 rounded-pill m-4 p-2 text-center fw-bold' id="submitTask">Add to List</button>
+            <button class='btn btn-sm task-btn border border-secondary border-3 rounded-pill m-2 p-2 text-center fw-bold bg-secondary text-white' id="submitTask">Add to List</button>
         </div>
     </form>
     
     <form>
-        <h4 class='header m-2'><span class="border-bottom border-3 p-1">Update Existing Task</span></h4>
-        <div class='taskUpdateForm m-4 text-center'>
-            <label for="updateId">Task ID</label>
+        <h4 class='header m-2'><span class="border-bottom border-3 p-1">Update Existing Task:</span></h4>
+        <div class='taskUpdateForm m-4'>
+            <label class="m-2" for="updateId">Task ID</label>
             <input id="updateId" placeholder="Enter Task ID"/>
-            <label for="updateNote">Notes</label>
-            <input id="updateNote" placeholder="Notes"/>
-        <div class="m-4 text-center">
-            <label for="updateTask">To Do Task</label>
+            <label class="m-2" for="updateTask">To Do Task</label>
             <input id="updateTask" placeholder="Update Task"/>
-            <label for="updateDeadline">Deadline</label>
+            <label class="m-2" for="updateNote">Notes</label>
+            <input id="updateNote" placeholder="Notes"/>
+            <label class="m-2" for="updateDeadline">Deadline Date</label>
             <input id="updateDeadline" type="Date" />
+            <label class="m-2" for="updateStatus">Date Completed</label>
+            <input id="updateStatus" type="Date" />
         </div>
-        </div>
+
         <div class="text-center">
-            <button class='btn btn-sm task-btn border border-secondary border-3 rounded-pill m-4 p-2 text-center fw-bold text' id="updateTask">Update List</button>
+            <button class='btn btn-sm task-btn border border-secondary border-3 rounded-pill m-2 p-2 text-center fw-bold bg-secondary text-white' id="updateTask">Update List</button>
         </div>
     </form>
 
 <!-- Is there a way to have the table automatically sort by the deadline date? -->
     <div class="container text-center">
         <h2 class="tableHeader header fs-2 fw-bolder text-center mt-4">Task List</h2>
-    <table class='container table toDoList m-2 border-secondary text-center'>
+    <table class='container table toDoList m-2  text-center'>
         <thead>
             <tr>
                 <th>Task ID</th>
                 <th>To Do Task</th>
                 <th>Notes</th>
                 <th>Deadline</th>
+                <th>Completed ✓ </th>
                 <th>Remove Task</th>
             </tr>
         </thead>
