@@ -1,5 +1,5 @@
 // CRUD = Create, Read, Update, Delete (Post, Get, Put, Delete) Declaring a URL endpoint. Can be an API (using AJAX) or local db.json. If you use local, *** type: json-server --watch db.json into terminal. Then use that url below.  NOT SURE HOW TO GET THIS TO WORK //
-// const taskdatabase_URL = 'http://localhost:3000/'
+const taskdatabase_URL = 'http://localhost:3000/taskList'
 
 // Create a code that loops over data and adds information to DOM //
 $.get(taskdatabase_URL).then((data) =>
