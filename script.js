@@ -11,6 +11,7 @@ $.get(taskdatabase_URL).then((data) =>
       <td>${task.toDoTask}</td>
       <td>${task.toDoNote}</td>
       <td>${task.toDoDeadline}</td>
+      <td>${task.toDoStatus}</td>
       <td>
         <button onclick="deleteTask(${task.id})"}>🗑</button>
       </td>
@@ -46,7 +47,7 @@ function updateTask() {
         toDoTask: $('#updateTask').val(),
         toDoNote: $('#updateNote').val(),
         toDoDeadline: $('#updateDeadline').val(),
-        toDoStatus: $('updateStatus').val(),
+        toDoStatus: $('#updateStatus').val(),
       },
     })
   };
