@@ -9,9 +9,10 @@ $.get(taskdatabase_URL).then((data) =>
     <tr>
       <td>${task.id}</td>
       <td>${task.toDoTask}</td>
+      <td>${task.toDoStatus}</td>
       <td>${task.toDoNote}</td>
       <td>${task.toDoDeadline}</td> //a way to rank by closest date at the top? //
-      <td><input type="checkbox"> ${task.toDoStatus}</td>
+      <td>${task.toDoComplete}</td>
     //   could also make this a button... need to create the function to mark off? could this include a date //
       <td>
         <button onclick="deleteTask(${task.id})"}>🗑</button>
@@ -25,6 +26,7 @@ $.get(taskdatabase_URL).then((data) =>
 $('#task').click(function () {
     $.post(taskdatabase_URL, {
       toDoTask: $('#newTask').val(),
+      toDoTask: $('#newStatus').val,
       toDoNote: $('#newNote').val(),
       toDoDeadline: $('#newDeadline').val(),
     })
@@ -46,9 +48,10 @@ function updateTask() {
       method: 'PUT',
       data: {
         toDoTask: $('#updateTask').val(),
+        toDoStatus: $('#updateStatus').val,
         toDoNote: $('#updateNote').val(),
         toDoDeadline: $('#updateDeadline').val(),
-        toDoStatus: $('#updateStatus').val(),
+        toDoStatus: $('#updateComplete').val(),
       },
     })
   };
