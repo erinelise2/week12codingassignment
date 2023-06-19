@@ -75,14 +75,14 @@
                 </form>
             <div class="col-md m-2">
                 <form>
-                    <h3 class='header m-2'><span class="border-bottom border-3 p-1">Update Existing Task:</span></h3>
+                    <h3 class='header m-2'><span class="border-bottom border-3 p-1">Update An Existing Task:</span></h3>
                     <div class='col taskUpdateForm form-group m-4'>
                         <div>
                             <label class="m-2" for="updateId">Task ID:</label>
                             <input id="updateId" placeholder="Task ID from Task List"/>
                         </div>
                         <div>
-                            <label class="m-2" for="updateTask">To Do Task:</label>
+                            <label class="m-2" for="updatetoDoTask">To Do Task:</label>
                             <input id="updateToDoTask" placeholder="Update Task"/>
                         </div>
                         <div>
@@ -109,7 +109,7 @@
                         </div>
                     </div>
                     <div class="">
-                        <button class='btn btn-sm task-btn border border-secondary border-3 rounded-pill ms-4 mb-4 p-2.5 fw-bold bg-secondary text-white fs-5' id="updateTask">Update List</button>
+                        <button class='btn btn-sm task-btn border border-secondary border-3 rounded-pill ms-4 mb-4 p-2.5 fw-bold bg-secondary text-white fs-5' id="updateTaskButton">Update List</button>
                     </div>
                 </div>
                 </form>
@@ -125,14 +125,14 @@
                 <th>Task ID</th>
                 <th>To Do Task</th>
                 <th>Status</th>
-                <th>Notes</th>
+                <th>Task Notes</th>
                 <th>Deadline</th>
                 <th>Completed ✓ </th>
-                <th>Remove Task</th>
+                <th>Remove</th>
             </tr>
         </thead>
         <tbody class="border-secondary text-secondary">
-            <!-- data from json will update here -->
+            <!-- data from db.json will update here -->
         </tbody>
     </table>
     </div>
@@ -140,6 +140,6 @@
 <footer>
     <br>
     <hr>
-    <p class="footer-text">Promineo Tech - Week 12 - Erin Brickman</p>
+    <p class="footer-text">Promineo Tech - Week 12 : CRUD app - Erin Brickman</p>
 </footer>
 </html>

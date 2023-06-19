@@ -45,7 +45,19 @@ form {
     letter-spacing: 0.5pt;
 }
 
-button {
+#newDeadline {
+    letter-spacing: 1pt;
+}
+
+#updateDeadline {
+    letter-spacing: 1pt;
+}
+
+#updateCompleteDate {
+    letter-spacing: 1pt;
+}
+
+button:hover {
     letter-spacing: 2pt;
 }
 
@@ -65,4 +77,5 @@ tbody {
     color: rgb(125, 152, 181);
     text-transform: lowercase;
     font-size: small;
+    margin-left: 5pt;
 }
