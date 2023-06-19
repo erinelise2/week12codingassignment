@@ -58,9 +58,10 @@ function updateTask() {
   // event listener to update task when button is clicked //
   $('#updateTaskButton').click(updateTask)
 
-  // something fun I found on a youtube https://www.youtube.com/watch?v=fPew9OI2PnA and used for tic tac toe game. Found a sound that works for my page https://mixkit.co/free-sound-effects/applause/ and want to play it when a task is marked as complete... /
+  // something fun I found on a youtube https://www.youtube.com/watch?v=fPew9OI2PnA and used for tic tac toe game. Found a sound that works for my page https://mixkit.co/free-sound-effects/applause/ and want to play it when a task is marked as complete... https://foolishdeveloper.com/how-to-play-sound-on-click-using-javascript/#:~:text=You%20can%20create%20this%20kind,by%20clicking%20on%20the%20button. //
+  
 //   const taskCompleteSound = new Audio("sounds/mixkit-small-crowd-ovation-437.wav");
-//   const updateButtonSound = document.querySelectorAll("updateCompleteDate");
+//   const updateButtonSound = document.querySelectorAll("updateTaskButton" && "radioButton3");
 //   updateButtonSound.forEach(button => {
 //     button.addEventListener("click", () => {
 //         taskCompleteSound.play();
