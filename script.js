@@ -46,7 +46,7 @@ function updateTask() {
     $.ajax(`${taskDatabase_URL}/${id}`, {
       method: 'PUT',
       data: {
-        toDoTask: $('#updateTask').val(),
+        toDoTask: $('#updateToDoTask').val(),
         toDoStatus: $("[name='optradio']:checked").val(),
         toDoNote: $('#updateNote').val(),
         toDoDeadline: $('#updateDeadline').val(),
