@@ -34,6 +34,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- shimmer effect from https://www.tutorialspoint.com/shimmer-effect-using-css -->
+<div>
+    <div class = "shimmer"> </div>
+</div>
+     <!-- end shimmer div -->
     <h1 class="mainHeader header fs-1 fw-bolder text-center m-4">Let's Get To It</h1>
 <!-- Creating container div and then a row dive that includes both forms... then each form begins with a column div to create them as side by side forms with the table below in it's own div/container -->
     <div class="container">
@@ -81,6 +86,7 @@
                             <label class="radio" for="updateStatus">Status: </label>
                             <input type="radio" name="optradio" class="me-2">Not Yet Started
                             <input type="radio" name="optradio" class="me-2">In Progress
+                            <input type="radio" name="optradio" class="me-2">Completed
                         </div>
                         <div>
                             <label class="m-2" for="updateNote">Task Notes:</label>
@@ -91,7 +97,7 @@
                             <input id="updateDeadline" type="Date" />
                         </div>
                         <div>
-                            <label class="m-2" for="updateComplete">Date Completed:</label>
+                            <label class="m-2" for="updateCompleteDate">Date Completed:</label>
                             <input id="updateStatus" type="Date" />
                         </div>
                     </div>
