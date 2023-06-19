@@ -11,7 +11,7 @@ $.get(taskdatabase_URL).then((data) =>
       <td>${task.toDoTask}</td>
       <td>${task.toDoNote}</td>
       <td>${task.toDoDeadline}</td> //a way to rank by closest date at the top? //
-      <td>${task.toDoStatus}</td>
+      <td><input type="checkbox"> ${task.toDoStatus}</td>
     //   could also make this a button... need to create the function to mark off? could this include a date //
       <td>
         <button onclick="deleteTask(${task.id})"}>🗑</button>
