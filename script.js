@@ -1,8 +1,8 @@
-// CRUD = Create, Read, Update, Delete (Post, Get, Put, Delete) Declaring a URL endpoint. Can be an API (using AJAX) or local db.json. If you use local, *** type: json-server --watch db.json into terminal. Then use that url below.  NOT SURE HOW TO GET THIS TO WORK //
-const taskdatabase_URL = 'http://localhost:3000/taskList'
+// CRUD = Create, Read, Update, Delete (Post, Get, Put, Delete) Declaring a URL endpoint. Can be an API (using AJAX) or local db.json. Command to install json: npm i -g json-server If you use local, *** type: json-server --watch db.json into terminal. **** had to add an npx to the beginning of the command.**** Then use that url below.  //
+const taskDatabase_URL = 'http://localhost:3000/taskList'
 
-// Create a code that loops over data and adds information to DOM //
-$.get(taskdatabase_URL).then((data) =>
+// Create a code that loops over data and adds information to DOM. Want to figure out how to move the lines so that the soonest deadline moves to the top //
+$.get(taskDatabase_URL).then((data) =>
   data.map((task) => {
     $('tbody').append(
       $(`
@@ -10,28 +10,26 @@ $.get(taskdatabase_URL).then((data) =>
       <td>${task.id}</td>
       <td>${task.toDoTask}</td>
       <td>${task.toDoStatus}</td>
-      <td>${task.toDoNote}</td>
-      <td>${task.toDoDeadline}</td> //a way to rank by closest date at the top? //
+      <td>${task.toDoNotes}</td>
+      <td>${task.toDoDeadline}</td> 
       <td>${task.toDoCompleteDate}</td>
-    //   could also make this a button... need to create the function to mark off? could this include a date //
       <td>
         <button onclick="deleteTask(${task.id})"}>🗑</button>
       </td>
     </tr>`)
     )
   })
-);
+)
 
 //Post/Adding new tasks //
-$('#task').click(function () {
-    $.post(taskdatabase_URL, {
+$('#submitTask').click(function () {
+    $.post(taskDatabase_URL, {
       toDoTask: $('#newTask').val(),
-      toDoStatus: $('#newStatus').val,
+      toDoStatus: $("[name='optradio']:checked").val(),
       toDoNote: $('#newNote').val(),
       toDoDeadline: $('#newDeadline').val(),
-      toDoCompleteDate: $('newCompleteDate').val,
     })
-  });
+  })
 
 //Deleting existing task ASCII trash bin: 🗑 from lab //
 
@@ -39,23 +37,23 @@ function deleteTask(id) {
     $.ajax(`${taskDatabase_URL}/${id}`, {
       type: 'DELETE',
     })
-  };
+  }
 
 //Updating information //
 function updateTask() {
-    id = $('#updateId').val()
+    let id = $('#updateId').val()
   
-    $.ajax(`${taskdatabase_URL}/${id}`, {
+    $.ajax(`${taskDatabase_URL}/${id}`, {
       method: 'PUT',
       data: {
         toDoTask: $('#updateTask').val(),
-        toDoStatus: $('#updateStatus').val,
+        toDoStatus: $("[name='optradio']:checked").val(),
         toDoNote: $('#updateNote').val(),
         toDoDeadline: $('#updateDeadline').val(),
         toDoCompleteDate: $('#updateCompleteDate').val(),
       },
     })
-  };
+  }
   
   // event listener to update task when button is clicked //
   $('#updateTask').click(updateTask)

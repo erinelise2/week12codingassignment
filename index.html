@@ -52,16 +52,19 @@
                             <input id="newTask" placeholder="Task" />
                         </div>
                         <div>
-                            <label class="radio" for="newStatus">Status: </label>
-                            <input type="radio" name="optradio" class="me-2">Not Yet Started
-                            <input type="radio" name="optradio" class="me-2">In Progress
+                            <label class="radio-inline m-2">Status:
+                                <input type="radio" name="optradio">Not Yet Started
+                            </label>
+                            <label class="radio-inline m-2">
+                                <input type="radio" name="optradio">In Progress
+                            </label>
                         </div>
                         <div>
                             <label class="m-2" for="newNote">Task Notes:</label>
                             <input id="newNote" placeholder="Notes"/>
                         </div>
                         <div>
-                            <label for="newDeadline">Deadline Date:</label>
+                            <label class="m-2" for="newDeadline">Deadline Date:</label>
                             <input id="newDeadline" type="Date" />
                         </div>
                     </div>
@@ -83,10 +86,15 @@
                             <input id="updateTask" placeholder="Update Task"/>
                         </div>
                         <div>
-                            <label class="radio" for="updateStatus">Status: </label>
-                            <input type="radio" name="optradio" class="me-2">Not Yet Started
-                            <input type="radio" name="optradio" class="me-2">In Progress
-                            <input type="radio" name="optradio" class="me-2">Completed
+                            <label class="radio-inline m-2">Status:
+                                <input type="radio" name="optradio">Not Yet Started
+                            </label>
+                            <label class="radio-inline m-2">
+                                <input type="radio" name="optradio">In Progress
+                            </label>
+                            <label class="radio-inline m-2">
+                                <input type="radio" name="optradio">Complete
+                            </label>
                         </div>
                         <div>
                             <label class="m-2" for="updateNote">Task Notes:</label>
@@ -98,7 +106,7 @@
                         </div>
                         <div>
                             <label class="m-2" for="updateCompleteDate">Date Completed:</label>
-                            <input id="updateStatus" type="Date" />
+                            <input id="updateCompleteDate" type="Date" />
                         </div>
                     </div>
                     <div class="">
