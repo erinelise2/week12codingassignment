@@ -3,17 +3,26 @@
     {
       "toDoTask": "Fold Laundry",
       "toDoStatus": "Complete",
-      "toDoNote": "",
-      "toDoDeadline": "2023-06-20",
+      "toDoNote": "Assigned to Erin",
+      "toDoDeadline": "2023-06-21",
       "toDoCompleteDate": "2023-06-21",
       "id": 1
     },
     {
-      "toDoTask": "fold laundry",
-      "toDoStatus": "In Progress",
-      "toDoNote": "none",
+      "toDoTask": "Clean Kitchen",
+      "toDoStatus": "Complete",
+      "toDoNote": "Assigned to Erin",
       "toDoDeadline": "2023-06-21",
+      "toDoCompleteDate": "2023-06-21",
       "id": 2
+    },
+    {
+      "toDoTask": "Clean Room",
+      "toDoStatus": "In Progress",
+      "toDoNote": "Assigned to Erin",
+      "toDoDeadline": "2023-06-22",
+      "toDoCompleteDate": "",
+      "id": 3
     }
   ]
 }

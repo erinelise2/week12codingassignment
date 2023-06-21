@@ -13,7 +13,7 @@ $.get(taskDatabase_URL).then((data) =>
       <td>${task.toDoStatus}</td>
       <td>${task.toDoNote}</td>
       <td>${task.toDoDeadline}</td> 
-      // ternary for complete date. If the task is complete, show the date. If not, show nothing. //
+    //   ternary for complete date. If the task is complete, show the date. If not, show nothing. //
       <td>${task.toDoCompleteDate}</td>
       <td>
         <button onclick="deleteTask(${task.id})"}>🗑</button>
@@ -30,7 +30,8 @@ function addTask(){
     "toDoTask": $('#newTask').val(),
     "toDoStatus": $("[name='optradio']:checked").val(),
     "toDoNote": $('#newNote').val(),
-    "toDoDeadline": $('#newDeadline').val()
+    "toDoDeadline": $('#newDeadline').val(),
+    "toDoCompleteDate": " ",
   }  
   console.log(newTask)
   $.ajax({
@@ -64,7 +65,13 @@ function updateTask() {
       },
     })
   }
-  
+
+  //Table on screen when refresh //
+// $(document).ready(function () {
+//     
+//     })
+
+
   // event listener to update task when button is clicked or? $("#updateTaskButton").on("click", (e) => updateTask(e)) //
   $('#updateTaskButton').click(updateTask)
 
