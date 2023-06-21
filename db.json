@@ -1,5 +1,19 @@
 {
-    "taskList": [
-
-    ]
+  "taskList": [
+    {
+      "toDoTask": "Fold Laundry",
+      "toDoStatus": "Complete",
+      "toDoNote": "",
+      "toDoDeadline": "2023-06-20",
+      "toDoCompleteDate": "2023-06-21",
+      "id": 1
+    },
+    {
+      "toDoTask": "fold laundry",
+      "toDoStatus": "In Progress",
+      "toDoNote": "none",
+      "toDoDeadline": "2023-06-21",
+      "id": 2
+    }
+  ]
 }

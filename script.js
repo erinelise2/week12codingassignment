@@ -1,6 +1,6 @@
 // CRUD = Create, Read, Update, Delete (Post, Get, Put, Delete) Declaring a URL endpoint. Can be an API (using AJAX) or local db.json. Command to install json: npm i -g json-server If you use local, *** type: json-server --watch db.json into terminal. **** had to add an npx to the beginning of the command.**** Then use that url below.  //
 
-const taskDatabase_URL = 'http://localhost:3000/taskList'
+const taskDatabase_URL = 'http://localhost:3000/taskList/'
 
 // Create a code that loops over data and adds information to DOM. Want to figure out how to move the lines so that the soonest deadline moves to the top //
 $.get(taskDatabase_URL).then((data) =>
@@ -11,8 +11,9 @@ $.get(taskDatabase_URL).then((data) =>
       <td>${task.id}</td>
       <td>${task.toDoTask}</td>
       <td>${task.toDoStatus}</td>
-      <td>${task.toDoNotes}</td>
+      <td>${task.toDoNote}</td>
       <td>${task.toDoDeadline}</td> 
+      // ternary for complete date. If the task is complete, show the date. If not, show nothing. //
       <td>${task.toDoCompleteDate}</td>
       <td>
         <button onclick="deleteTask(${task.id})"}>🗑</button>
@@ -24,17 +25,24 @@ $.get(taskDatabase_URL).then((data) =>
 )
 
 //Post/Adding new tasks //
-$('#submitTask').click(function () {
-    $.post(taskDatabase_URL, {
-      toDoTask: $('#newTask').val(),
-      toDoStatus: $("[name='optradio']:checked").val(),
-      toDoNote: $('#newNote').val(),
-      toDoDeadline: $('#newDeadline').val(),
-    })
-  })
+function addTask(){
+  const newTask = {
+    "toDoTask": $('#newTask').val(),
+    "toDoStatus": $("[name='optradio']:checked").val(),
+    "toDoNote": $('#newNote').val(),
+    "toDoDeadline": $('#newDeadline').val()
+  }  
+  console.log(newTask)
+  $.ajax({
+    url: `http://localhost:3000/taskList/`,
+    type: 'POST',
+    data: JSON.stringify(newTask),
+    contentType: 'application/json'
+  });
+console.log("this worked")
+}
 
 //Deleting existing task ASCII trash bin: 🗑 from lab //
-
 function deleteTask(id) {
     $.ajax(`${taskDatabase_URL}/${id}`, {
       type: 'DELETE',
@@ -44,12 +52,12 @@ function deleteTask(id) {
 //Updating information //
 function updateTask() {
     let id = $('#updateId').val()
-  
-    $.ajax(`${taskDatabase_URL}/${id}`, {
+
+      $.ajax(`${taskDatabase_URL}/${id}`, {
       method: 'PUT',
       data: {
         toDoTask: $('#updateToDoTask').val(),
-        toDoStatus: $("[name='optradio']:checked").val(),
+        toDoStatus: $("[name='updateOptRadio']:checked").val(),
         toDoNote: $('#updateNote').val(),
         toDoDeadline: $('#updateDeadline').val(),
         toDoCompleteDate: $('#updateCompleteDate').val(),
@@ -69,3 +77,14 @@ function updateTask() {
 //         taskCompleteSound.play();
 //     });
 //   });
+
+//original post/add method from lab//
+// ORIGINAL METHOD
+// $('#submitTask').click(function () {
+//     $.post(`${taskDatabase_URL}`, {
+//       toDoTask: $('#toDoTask').val(),
+//       toDoStatus: $("[name='optradio']:checked").val(),
+//       toDoNote: $('#toDoNote').val(),
+//       toDoDeadline: $('#toDoDeadline').val()
+//     })
+//   }).then(console.log($('#toDoTask').val()))

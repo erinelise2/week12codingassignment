@@ -54,11 +54,12 @@
                             <input id="newTask" placeholder="New Task" />
                         </div>
                         <div>
+                            <!-- NOTE CHECK THIS AGAIN -->
                             <label class="radio-inline">Status:
-                                <input class="me-0.25" id="radioButton1" type="radio" name="optradio" checked /> Not Yet Started
+                                <input class="me-0.25" id="radioButton1" type="radio" name="optradio" value="Not Yet Started" checked /> Not Yet Started
                             </label>
                             <label class="radio-inline">
-                                <input class="me-0.25" id="radioButton2" type="radio" name="optradio" /> In Progress
+                                <input class="me-0.25" id="radioButton2" type="radio" name="optradio" value="In Progress" /> In Progress
                             </label>
                         </div>
                         <div>
@@ -71,7 +72,7 @@
                         </div>
                     </div>
                         <div class="">
-                        <button class='btn btn-sm task-btn border border-secondary border-3 rounded-pill ms-4 mb-4 p-2.5 fw-bold bg-secondary text-white fs-5' id="submitTask">Add to List</button>
+                        <button class='btn btn-sm task-btn border border-secondary border-3 rounded-pill ms-4 mb-4 p-2.5 fw-bold bg-secondary text-white fs-5' onclick="addTask()" id="submitTask">Add to List</button>
                         </div>
                     </div>
                 </form>
@@ -89,12 +90,12 @@
                         </div>
                         <div>
                             <label class="radio-inline">Status:
-                                <input class="me-0.25" id="radioButton1" type="radio" name="optradio" checked/> Not Yet Started
+                                <input class="me-0.25" id="radioButton1" type="radio" name="updateOptRadio" value="Note Yet Started" checked/> Not Yet Started
                             </label>
                             <label class="radio-inline">
-                                <input class="me-0.25" id="radioButton2" type="radio" name="optradio" /> In Progress
+                                <input class="me-0.25" id="radioButton2" type="radio" name="updateOptRadio" value="In Progress" /> In Progress
                             <label class="radio-inline">
-                                <input class="me-0.25" id="radioButton3" type="radio" name="optradio" /> Completed
+                                <input class="me-0.25" id="radioButton3" type="radio" name="updateOptRadio" value="Complete"/> Complete
                             </label>
                         </div>
                         <div>
@@ -111,7 +112,7 @@
                         </div>
                     </div>
                     <div class="">
-                        <button class='btn btn-sm task-btn border border-secondary border-3 rounded-pill ms-4 mb-4 p-2.5 fw-bold bg-secondary text-white fs-5' id="updateTaskButton">Update List</button>
+                        <button class='btn btn-sm task-btn border border-secondary border-3 rounded-pill ms-4 mb-4 p-2.5 fw-bold bg-secondary text-white fs-5' id="updateTaskButton" onclick="updateTask()">Update List</button>
                     </div>
                 </div>
                 </form>
