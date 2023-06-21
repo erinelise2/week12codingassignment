@@ -54,7 +54,6 @@
                             <input id="newTask" placeholder="New Task" />
                         </div>
                         <div>
-                            <!-- NOTE CHECK THIS AGAIN -->
                             <label class="radio-inline">Status:
                                 <input class="me-0.25" id="radioButton1" type="radio" name="optradio" value="Not Yet Started" checked /> Not Yet Started
                             </label>
@@ -63,8 +62,8 @@
                             </label>
                         </div>
                         <div>
-                            <label class="m-2" for="newNote">Task Notes:</label>
-                            <input id="newNote" placeholder="Task Notes"/>
+                            <label class="m-2" for="newAssign">Task Assigned To:</label>
+                            <input id="newAssign" placeholder="Name of Person"/>
                         </div>
                         <div>
                             <label class="m-2" for="newDeadline">Deadline Date:</label>
@@ -90,7 +89,7 @@
                         </div>
                         <div>
                             <label class="radio-inline">Status:
-                                <input class="me-0.25" id="radioButton1" type="radio" name="updateOptRadio" value="Note Yet Started" checked/> Not Yet Started
+                                <input class="me-0.25" id="radioButton1" type="radio" name="updateOptRadio" value="Not Yet Started" checked/> Not Yet Started
                             </label>
                             <label class="radio-inline">
                                 <input class="me-0.25" id="radioButton2" type="radio" name="updateOptRadio" value="In Progress" /> In Progress
@@ -99,8 +98,8 @@
                             </label>
                         </div>
                         <div>
-                            <label class="m-2" for="updateNote">Task Notes:</label>
-                            <input id="updateNote" placeholder="Update Task Notes"/>
+                            <label class="m-2" for="updateAssign">Task Assigned To:</label>
+                            <input id="updateAssign" placeholder="Name of Person"/>
                         </div>
                         <div>
                             <label class="m-2" for="updateDeadline">Deadline Date:</label>
@@ -127,9 +126,9 @@
         <thead>
             <tr>
                 <th>Task ID</th>
-                <th>To Do Task</th>
+                <th>Task</th>
                 <th>Status</th>
-                <th>Task Notes</th>
+                <th>Assigned To</th>
                 <th>Deadline</th>
                 <th>Completed ✓ </th>
                 <th>Remove</th>

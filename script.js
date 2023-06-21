@@ -11,7 +11,7 @@ $.get(taskDatabase_URL).then((data) =>
       <td>${task.id}</td>
       <td>${task.toDoTask}</td>
       <td>${task.toDoStatus}</td>
-      <td>${task.toDoNote}</td>
+      <td>${task.toDoAssign}</td>
       <td>${task.toDoDeadline}</td> 
     //   ternary for complete date. If the task is complete, show the date. If not, show nothing. //
       <td>${task.toDoCompleteDate}</td>
@@ -29,7 +29,7 @@ function addTask(){
   const newTask = {
     "toDoTask": $('#newTask').val(),
     "toDoStatus": $("[name='optradio']:checked").val(),
-    "toDoNote": $('#newNote').val(),
+    "toDoAssign": $('#newAssign').val(),
     "toDoDeadline": $('#newDeadline').val(),
     "toDoCompleteDate": " ",
   }  
@@ -48,7 +48,7 @@ function deleteTask(id) {
     $.ajax(`${taskDatabase_URL}/${id}`, {
       type: 'DELETE',
     })
-  }
+}
 
 //Updating information //
 function updateTask() {
@@ -59,14 +59,14 @@ function updateTask() {
       data: {
         toDoTask: $('#updateToDoTask').val(),
         toDoStatus: $("[name='updateOptRadio']:checked").val(),
-        toDoNote: $('#updateNote').val(),
+        toDoAssign: $('#updateAssign').val(),
         toDoDeadline: $('#updateDeadline').val(),
         toDoCompleteDate: $('#updateCompleteDate').val(),
       },
     })
   }
 
-  //Table on screen when refresh //
+//Table on screen when refresh //
 // $(document).ready(function () {
 //     
 //     })
@@ -91,7 +91,7 @@ function updateTask() {
 //     $.post(`${taskDatabase_URL}`, {
 //       toDoTask: $('#toDoTask').val(),
 //       toDoStatus: $("[name='optradio']:checked").val(),
-//       toDoNote: $('#toDoNote').val(),
+//       toDoAssign: $('#toDoAssign').val(),
 //       toDoDeadline: $('#toDoDeadline').val()
 //     })
 //   }).then(console.log($('#toDoTask').val()))
