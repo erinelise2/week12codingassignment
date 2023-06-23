@@ -43,8 +43,9 @@ function addTask(){
 console.log("this worked")
 }
 
-//Deleting existing task ASCII trash bin: 🗑 from lab //
+//Deleting existing task ASCII trash bin: 🗑 from lab.   "let del = confirm("Do you want to permanently delete task?");" is from the Thursday evening class. It is not pretty, but a great thing to remember for future things.//
 function deleteTask(id) {
+
     $.ajax(`${taskDatabase_URL}/${id}`, {
       type: 'DELETE',
     })

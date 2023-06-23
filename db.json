@@ -2,27 +2,11 @@
   "taskList": [
     {
       "toDoTask": "Target Pick Up",
-      "toDoStatus": "Not Yet Started",
+      "toDoStatus": "Complete",
       "toDoAssign": "Erin",
       "toDoDeadline": "2023-06-21",
-      "toDoCompleteDate": " ",
+      "toDoCompleteDate": "2023-06-22",
       "id": 1
-    },
-    {
-      "toDoTask": "Feed Horses",
-      "toDoStatus": "Not Yet Started",
-      "toDoAssign": "Erin",
-      "toDoDeadline": "2023-06-21",
-      "toDoCompleteDate": " ",
-      "id": 2
-    },
-    {
-      "toDoTask": "Fold Laundry",
-      "toDoStatus": "In Progress",
-      "toDoAssign": "Erin",
-      "toDoDeadline": "2023-06-22",
-      "toDoCompleteDate": "",
-      "id": 3
     },
     {
       "toDoTask": "Clean Room",
@@ -31,6 +15,14 @@
       "toDoDeadline": "2023-06-22",
       "toDoCompleteDate": "2023-06-21",
       "id": 4
+    },
+    {
+      "toDoTask": "Fold Laundry",
+      "toDoStatus": "Complete",
+      "toDoAssign": "",
+      "toDoDeadline": "2023-06-23",
+      "toDoCompleteDate": "2023-06-23",
+      "id": 5
     }
   ]
 }
