@@ -2,7 +2,12 @@
 
 const taskDatabase_URL = 'http://localhost:3000/taskList/'
 
+document.addEventListener('DOMContentLoaded', () => {
+  drawTable();
+});
+
 // Create a code that loops over data and adds information to DOM. Want to figure out how to move the lines so that the soonest deadline moves to the top //
+function drawTable() {
 $.get(taskDatabase_URL).then((data) =>
   data.map((task) => {
     $('tbody').append(
@@ -23,6 +28,7 @@ $.get(taskDatabase_URL).then((data) =>
     )
   })
 )
+}
 
 //Post/Adding new tasks //
 function addTask(){
@@ -48,7 +54,7 @@ function deleteTask(id) {
 
     $.ajax(`${taskDatabase_URL}/${id}`, {
       type: 'DELETE',
-    })
+    }).then(drawTable);
 }
 
 //Updating information //
@@ -64,13 +70,8 @@ function updateTask() {
         toDoDeadline: $('#updateDeadline').val(),
         toDoCompleteDate: $('#updateCompleteDate').val(),
       },
-    })
+    }).then(drawTable)
   }
-
-//Table on screen when refresh //
-// $(document).ready(function () {
-//     
-//     })
 
 
   // event listener to update task when button is clicked or? $("#updateTaskButton").on("click", (e) => updateTask(e)) //
